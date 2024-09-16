@@ -1,9 +1,10 @@
+'use client';
+
 import { TextHoverEffect } from "@/app/components/ui/text-hover-effect";
 import { FloatingDock } from "./components/ui/floating-dock";
 import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
 
-import { cn } from "@/lib/utils";
 
 import {
   IconBrandGithub,
@@ -20,6 +21,7 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
 
   {/* THE DOCK */}
   const links = [
@@ -120,9 +122,20 @@ import {
     },
   ];
   
-  
+  const rotatingWords = ["Web Developer","Photographer", "Adventurer"];
 
   export default function Home() {
+
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
+    
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
+      }, 3000); // Change the word every 3 seconds
+
+      return () => clearInterval(interval); // Clean up the interval on component unmount
+    }, []);
+
     return (
       <div className="min-h-screen flex flex-col justify-between">
 
@@ -135,12 +148,12 @@ import {
         </div>
 
         {/* THE MAIN PAGE */}
-        <div className="flex-grow flex items-center justify-center">
+        <div className="flex-grow flex items-center justify-center sm:max-h-2 md:max-h-5 lg:max-h-screen">
           <TextHoverEffect text="Andrew Dang" />
           <BackgroundGradientAnimation>
             <div className="absolute z-49 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
               <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
-                Web Developer
+              {rotatingWords[currentWordIndex]}
               </p>
             </div>
           </BackgroundGradientAnimation>
