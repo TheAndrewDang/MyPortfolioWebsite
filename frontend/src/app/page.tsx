@@ -1,6 +1,9 @@
 import { TextHoverEffect } from "@/app/components/ui/text-hover-effect";
 import { FloatingDock } from "./components/ui/floating-dock";
 import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
+import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
+
+import { cn } from "@/lib/utils";
 
 import {
   IconBrandGithub,
@@ -9,9 +12,16 @@ import {
   IconHome,
   IconPhoto,
   IconTerminal2,
+  IconArrowWaveRightUp,
+  IconBoxAlignRightFilled,
+  IconBoxAlignTopLeft,
+  IconClipboardCopy,
+  IconFileBroken,
+  IconSignature,
+  IconTableColumn,
 } from "@tabler/icons-react";
-import Image from "next/image";
 
+  {/* THE DOCK */}
   const links = [
     {
       title: "Home",
@@ -59,6 +69,59 @@ import Image from "next/image";
     },
   ];
 
+
+  {/* THE PROJECTS */}
+  const Skeleton = () => (
+    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800"></div>
+  );
+  const items = [
+    {
+      title: "The Dawn of Innovation",
+      description: "Explore the birth of groundbreaking ideas and inventions.",
+      header: <Skeleton />,
+      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Digital Revolution",
+      description: "Dive into the transformative power of technology.",
+      header: <Skeleton />,
+      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Art of Design",
+      description: "Discover the beauty of thoughtful and functional design.",
+      header: <Skeleton />,
+      icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Power of Communication",
+      description:
+        "Understand the impact of effective communication in our lives.",
+      header: <Skeleton />,
+      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Pursuit of Knowledge",
+      description: "Join the quest for understanding and enlightenment.",
+      header: <Skeleton />,
+      icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Joy of Creation",
+      description: "Experience the thrill of bringing ideas to life.",
+      header: <Skeleton />,
+      icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Spirit of Adventure",
+      description: "Embark on exciting journeys and thrilling discoveries.",
+      header: <Skeleton />,
+      icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    },
+  ];
+  
+  
+
   export default function Home() {
     return (
       <div className="min-h-screen flex flex-col justify-between">
@@ -71,7 +134,7 @@ import Image from "next/image";
               />
         </div>
 
-        {/* THE CONTENT */}
+        {/* THE MAIN PAGE */}
         <div className="flex-grow flex items-center justify-center">
           <TextHoverEffect text="Andrew Dang" />
           <BackgroundGradientAnimation>
@@ -83,11 +146,38 @@ import Image from "next/image";
           </BackgroundGradientAnimation>
         </div>
 
-        <div className="min-h-screen text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
+        {/* THE ABOUT */}
+        <div className="min-h-full">
+          <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
+            <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-8">
+              About Me
+            </div>
+          </div>
+          <div className="text-white font-bold px-4 pointer-events-none text-base text-center md:text-xl lg:text-3xl">
+            <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pb-14">
+              I am a Web Developer based in Salem, Oregon. I am passionate about creating beautiful and functional websites. I am always looking for new opportunities to grow and improve my skills.
+            </div>
+          </div>
+        </div>
+
+        {/* THE PROJECTS */}
+        <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-14">
             My Projects
           </div>
         </div>
+          <BentoGrid className="max-w-4xl mx-auto">
+            {items.map((item, i) => (
+              <BentoGridItem
+                key={i}
+                title={item.title}
+                description={item.description}
+                header={item.header}
+                icon={item.icon}
+                className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+              />
+            ))}
+          </BentoGrid>
 
 
 
