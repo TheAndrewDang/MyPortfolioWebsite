@@ -5,7 +5,6 @@ import { FloatingDock } from "./components/ui/floating-dock";
 import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
 
-
 import {
   IconBrandGithub,
   IconBrandInstagram,
@@ -22,6 +21,10 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
+
+
+
+
 
   {/* THE DOCK */}
   const links = [
@@ -52,7 +55,7 @@ import { useEffect, useState } from "react";
       icon: (
         <IconBrandSpotify className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://open.spotify.com/user/22k757h7pbkx57i7gm7awk2oi?si=76f2212da9d64a53",
     },
  
     {
@@ -60,14 +63,14 @@ import { useEffect, useState } from "react";
       icon: (
         <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.instagram.com/theandrewdang/",
     },
     {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://github.com/TheAndrewDang",
     },
   ];
 
@@ -131,9 +134,9 @@ import { useEffect, useState } from "react";
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
-      }, 3000); // Change the word every 3 seconds
+      }, 4000);
 
-      return () => clearInterval(interval); // Clean up the interval on component unmount
+      return () => clearInterval(interval);
     }, []);
 
     return (
@@ -148,8 +151,11 @@ import { useEffect, useState } from "react";
         </div>
 
         {/* THE MAIN PAGE */}
-        <div className="flex-grow flex items-center justify-center sm:max-h-2 md:max-h-5 lg:max-h-screen">
+
+        <div className="hero flex-grow flex items-center justify-center sm:max-h-2 md:max-h-5 lg:max-h-screen">
+
           <TextHoverEffect text="Andrew Dang" />
+
           <BackgroundGradientAnimation>
             <div className="absolute z-49 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
               <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
@@ -160,20 +166,27 @@ import { useEffect, useState } from "react";
         </div>
 
         {/* THE ABOUT */}
-        <div className="min-h-full">
-          <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
+        <div className= "max-h-full sticky">
+          <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl" id="halfwidth">
             <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-8">
               About Me
             </div>
           </div>
-          <div className="text-white font-bold px-4 pointer-events-none text-base text-center md:text-xl lg:text-3xl">
-            <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pb-14">
-              I am a Web Developer based in Salem, Oregon. I am passionate about creating beautiful and functional websites. I am always looking for new opportunities to grow and improve my skills.
+
+
+          <div className="text-white font-bold px-4 pointer-events-none text-base text-center md:text-xl lg:text-3xl" id="halfwidth">
+            <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pb-14 px-6">
+              I am a web developer, photographer, and kombucha enthusiast based in Salem, Oregon. I am passionate about creating beautiful and functional websites. I am always looking for new opportunities to grow and improve my skills.
             </div>
           </div>
         </div>
 
+        <div>
+
+        </div>
+
         {/* THE PROJECTS */}
+        <div className="pb-14">
         <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-14">
             My Projects
@@ -191,7 +204,7 @@ import { useEffect, useState } from "react";
               />
             ))}
           </BentoGrid>
-
+          </div>
 
 
 
