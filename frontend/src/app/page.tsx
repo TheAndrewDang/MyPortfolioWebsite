@@ -143,12 +143,11 @@ import { useEffect, useState } from "react";
       <div className="min-h-screen flex flex-col justify-between">
 
         {/* THE DOCK */}
-        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 pl-4 z-50">
               <FloatingDock
-                mobileClassName="absolute bottom-0 left-0 pb-6" // Work in progress
+                mobileClassName="fixed bottom-0 left-0 pb-6 pl-6 z-50" // Work in progress
+                desktopClassName="fixed bottom-6 left-1/2 -translate-x-1/2 z-50" 
                 items={links}
               />
-        </div>
 
         {/* THE MAIN PAGE */}
 
@@ -158,7 +157,7 @@ import { useEffect, useState } from "react";
 
           <BackgroundGradientAnimation>
             <div className="absolute z-49 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
-              <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
+              <p className="bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
               {rotatingWords[currentWordIndex]}
               </p>
             </div>
