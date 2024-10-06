@@ -23,6 +23,7 @@ import {
 import { useEffect, useState } from "react";
 import { BackgroundLines } from "./components/ui/background-lines";
 import { ParallaxScroll } from "./components/ui/parallax-scroll";
+import { TextGenerateEffect } from "./components/ui/text-generate-effect";
 
 // Dock links
 const links = [
@@ -143,22 +144,9 @@ const items = [
   },
 ];
 
-const rotatingWords = ["Web Developer", "Photographer", "Adventurer"];
+const words = `The Web Developer, Photographer, and Adventurer`
 
-
-
-
-export default function Home() {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+export default function Home() { 
   return (
     <div className="min-h-screen flex flex-col justify-between">
       {/* THE DOCK */}
@@ -169,39 +157,28 @@ export default function Home() {
       />
 
       {/* THE MAIN PAGE */}
-      <div className="hero flex-grow flex items-center justify-center sm:max-h-2 md:max-h-5 lg:max-h-screen">
-        <TextHoverEffect text="Andrew Dang" />
-        <BackgroundGradientAnimation>
-          <div className="absolute z-49 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
-            <p className="bg-clip-text drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
-              {rotatingWords[currentWordIndex]}
-            </p>
-          </div>
-        </BackgroundGradientAnimation>
+      <div className="hero flex-grow flex items-center min-h-screen relative">
+
+        <video
+          src="/assets/mainwallpaper.mp4"
+          autoPlay
+          muted
+          loop
+          className="absolute inset-0 object-cover w-full h-full z-0"
+        />
+
+        <div className="w-full text-center z-10">
+          <div className="opacity-80">
+        <TextGenerateEffect words="I'm Andrew Dang" className=""/>
+        </div>
+        </div>
+
       </div>
 
       {/* THE ABOUT SECTION */}
-
       <div className="min-h-screen flex relative">
-        {/* Left Side: Title (Sticky) */}
-        <div className="flex-1 sticky top-0 h-[calc(100vh-5rem)] flex flex-col justify-center items-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
-          <BackgroundLines>
-            <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-8 flex items-center justify-center h-full">
-              About Me
-            </div>
-          </BackgroundLines>
-        </div>
-
-        {/* Right Side: Description (Scrollable) */}
-        <div className="flex-1 flex flex-col justify-center items-center text-white font-bold px-4 pointer-events-auto text-base text-center md:text-xl lg:text-3xl overflow-y-auto h-[300vh]">
-          <div className="mt-0 bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pb-14 px-6">
-            I am a web developer, photographer, and kombucha enthusiast based in Salem, Oregon. I am passionate about creating beautiful and functional websites. I am always looking for new opportunities to grow and improve my skills.
-          </div>
-        </div>
+        <ParallaxScroll images={images} />
       </div>
-
-      <ParallaxScroll images={images} />
-
 
       {/* THE PROJECTS */}
       <div className="pb-14">
@@ -224,16 +201,14 @@ export default function Home() {
         </BentoGrid>
       </div>
 
-
-        <footer>
-          <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white font-bold px-4 pointer-events-none text-sm text-center md:text-l lg:text-l">
-            <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-3 pb-3">
-              © 2024 Andrew Dang. All rights reserved.
-            </div>
+      <footer>
+        <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white font-bold px-4 pointer-events-none text-sm text-center md:text-l lg:text-l">
+          <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-3 pb-3">
+            © 2024 Andrew Dang. All rights reserved.
           </div>
-        </footer>
-
+        </div>
+      </footer>
     </div>
-
   );
 }
+

@@ -14,7 +14,7 @@ export const ParallaxScroll = ({
 }) => {
   const gridRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({
-    container: gridRef, // remove this if your container is not fixed height
+    // container: gridRef, // remove this if your container is not fixed height
     offset: ["start start", "end start"], // remove this if your container is not fixed height
   });
 
@@ -30,7 +30,7 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-screen items-start overflow-auto w-full", className)}
+      className={cn("sticky h-screen items-start overflow-auto w-full", className)}
       ref={gridRef}
     >
       <div
