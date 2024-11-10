@@ -1,10 +1,5 @@
 'use client';
-
-import { TextHoverEffect } from "@/app/components/ui/text-hover-effect";
 import { FloatingDock } from "./components/ui/floating-dock";
-import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
-import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
-import Image from "next/image";
 import {
   IconBrandGithub,
   IconBrandInstagram,
