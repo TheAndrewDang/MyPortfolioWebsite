@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import me from '../../../../public/assets/me.jpg'
+import osu from '../../../../public/assets/osu.webp'
 
 export const Bentogrid = () => {
   return (
@@ -21,42 +22,47 @@ export const Bentogrid = () => {
                 <Image src={me} alt="me" layout='fill' className='h-full w-full object-cover rounded-3xl' />
             </div>
 
-            <div className="row-span-3 rounded-3xl bg-neutral-300">
-                <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
-                        <div className='text-center text-black text-7xl font-bold mb-4'>
-                            B.S Computer Science
-                        </div>
-                        <div className='text-center text-orange-600 text-5xl font-bold px-4'>
-                            Oregon State University
-                        </div>
+            <div className="row-span-3 rounded-3xl bg-neutral-300 relative">
+                <div className="absolute inset-0 p-4">
+                    <Image 
+                        src={osu} 
+                        alt="school" 
+                        className="w-full h-full object-cover rounded-3xl opacity-10"
+                    />
+                </div>
+                <div className='relative z-10 w-full h-full col-span-2 row-span-3 flex flex-col justify-center items-center'>
+                    <div className='text-center text-black text-6xl font-bold mb-4'>
+                        B.S Computer Science
                     </div>
+                    <div className='text-center text-orange-600 text-4xl font-bold px-4'>
+                        Oregon State University
+                    </div>
+                </div>
             </div>
 
             <div className="row-span-3 rounded-3xl bg-neutral-300">
                 <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
                     <div className='text-center text-neutral-800 text-9xl font-bold mb-4'>
-                            Age
+                        Age
                     </div>
                     <div className='text-center text-9xl font-bold bg-gradient-to-r from-orange-600 via-pink-400 to-indigo-400 inline-block text-transparent bg-clip-text'>
-                            24
-                     </div>
+                        24
+                    </div>
                 </div>
-
             </div>
 
             <div className="row-span-2 rounded-3xl bg-neutral-300">
                 <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
-                        <div className='text-center text-6xl font-bold text-red-600 leading-[1.2]'>
-                                Ka Technology
-                        </div>
-                        <div className='text-center text-3xl text-neutral-800 font-bold'>
-                                    Co-Founder and Web Developer
-                        </div>
+                    <div className='text-center text-6xl md:text-5xl font-bold text-red-600 leading-[1.2]'>
+                        Ka Technology
                     </div>
-                
+                    <div className='text-center text-3xl md:text-2xl text-neutral-800 font-bold'>
+                        Co-Founder and Web Developer
+                    </div>
+                </div>
             </div>
         </div>
-  </div>
+    </div>
   )
 }
 

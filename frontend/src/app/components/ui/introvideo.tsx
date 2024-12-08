@@ -7,7 +7,7 @@ export const Introvideo = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const Point = windowHeight * 1.1; 
+      const Point = windowHeight * 0.9; 
 
       if (scrollPosition <= Point) {
         const calculatedPadding = Math.min((scrollPosition / Point) * 24, 24);
@@ -31,10 +31,9 @@ export const Introvideo = () => {
         loop
         style={{
           padding: `${padding}px`,
-          borderRadius: '1.5rem',
-          transition: 'padding, border-radius',
+          transition: 'padding'
         }}
-        className="absolute inset-0 object-cover w-full h-full z-0 brightness-50"
+        className="absolute inset-0 object-cover w-full h-full z-0 brightness-50 rounded-3xl"
       />
     </div>
   );
