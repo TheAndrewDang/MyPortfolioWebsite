@@ -74,17 +74,17 @@ export default function Home() {
       </div>
 
       {/* THE PROJECTS */}
-      <div className="pb-14">
+      {/* <div className="pb-14">
         <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-14">
             My Projects
           </div>
         </div>
-      </div>
+      </div> */}
 
       <footer>
-        <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white font-bold px-4 pointer-events-none text-sm text-center md:text-l lg:text-l">
-          <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-3 pb-3">
+        <div className="font-bold px-4 pointer-events-none text-sm text-center md:text-l lg:text-l">
+          <div className="text-neutral-600 pt-3 pb-3">
             © 2024 Andrew Dang. All rights reserved.
           </div>
         </div>

@@ -35,15 +35,15 @@ export const TextGenerateEffect = ({
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
-            <motion.span
-              key={word + idx}
-              className="text-gray-100 opacity-80"
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
-            >
-              {word}{" "}
-            </motion.span>
+            <span key={word + idx} className="text-gray-100 opacity-80">
+              <motion.span
+                style={{
+                  filter: filter ? "blur(10px)" : "none",
+                }}
+              >
+                {word}{" "}
+              </motion.span>
+            </span>
           );
         })}
       </motion.div>
