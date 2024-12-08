@@ -9,6 +9,7 @@ import {
   IconTerminal2,
 } from "@tabler/icons-react";
 import { TextGenerateEffect } from "./components/ui/text-generate-effect";
+import { Bentogrid } from "./components/ui/bentogrid";
 
 // Dock links
 const links = [
@@ -76,6 +77,7 @@ export default function Home() {
 
       {/* THE ABOUT SECTION */}
       <div className="min-h-screen flex relative">
+        <Bentogrid />
       </div>
 
       {/* THE PROJECTS */}
