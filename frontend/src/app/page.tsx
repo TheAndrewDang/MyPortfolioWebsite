@@ -10,6 +10,7 @@ import {
 } from "@tabler/icons-react";
 import { TextGenerateEffect } from "./components/ui/text-generate-effect";
 import { Bentogrid } from "./components/ui/bentogrid";
+import  { Introvideo } from "./components/ui/introvideo";
 
 // Dock links
 const links = [
@@ -58,15 +59,7 @@ export default function Home() {
 
       {/* THE MAIN PAGE */}
       <div className="hero flex-grow flex items-center min-h-screen relative">
-
-        <video
-          src="/assets/mainwallpaper.mp4"
-          autoPlay
-          muted
-          loop
-          className="absolute inset-0 object-cover w-full h-full z-0 brightness-50"
-        />
-
+        <Introvideo />
         <div className="w-full text-center z-10">
           <div className="">
         <TextGenerateEffect words="I'm Andrew Dang" className=""/>
