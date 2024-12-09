@@ -31,7 +31,8 @@ export const Introvideo = () => {
         loop
         style={{
           padding: `${padding}px`,
-          transition: 'padding'
+          transition: 'padding',
+          borderRadius: '1.5rem',
         }}
         className="absolute inset-0 object-cover w-full h-full z-0 brightness-50 rounded-3xl"
       />
