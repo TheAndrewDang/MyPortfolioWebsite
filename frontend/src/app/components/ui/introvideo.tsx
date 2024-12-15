@@ -1,41 +1,39 @@
-import React, { useState, useEffect } from 'react';
+"use client";
+
+import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { TextGenerateEffect } from "./text-generate-effect";
 
 export const Introvideo = () => {
-  const [padding, setPadding] = useState(0);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const Point = windowHeight * 0.9; 
-
-      if (scrollPosition <= Point) {
-        const calculatedPadding = Math.min((scrollPosition / Point) * 24, 24);
-        setPadding(calculatedPadding);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const width = useTransform(scrollY, [0, 500], ["100%", "80rem"]);
 
   return (
-    <div>
-      <video
-        src="/assets/mainwallpaper.mp4"
-        autoPlay
-        muted
-        loop
+    <div className="relative h-screen overflow-hidden flex items-center justify-center sm:p-3">
+      <motion.div
         style={{
-          padding: `${padding}px`,
-          transition: 'padding',
-          borderRadius: '1.5rem',
+          width,
+          height: "100%",
         }}
-        className="absolute inset-0 object-cover w-full h-full z-0 brightness-50 rounded-3xl"
-      />
+        className="flex items-center justify-center"
+      >
+        <video
+          src="/assets/mainwallpaper.mp4"
+          autoPlay
+          muted
+          loop
+          className="h-full object-cover"
+        />
+      </motion.div>
+
+      <div className="absolute inset-0 flex items-center justify-center text-center z-10">
+        <TextGenerateEffect
+          words="Hi, I'm Andrew Dang"
+          className="text-white text-4xl md:text-6xl lg:text-8xl"
+          duration={1.5}
+        />
+      </div>
     </div>
   );
 };

@@ -19,16 +19,16 @@ const links = [
     icon: <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
     href: "#",
   },
-  {
-    title: "Projects",
-    icon: <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-    href: "#",
-  },
-  {
-    title: "Photography",
-    icon: <IconPhoto className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-    href: "#",
-  },
+  // {
+  //   title: "Projects",
+  //   icon: <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  //   href: "#",
+  // },
+  // {
+  //   title: "Photography",
+  //   icon: <IconPhoto className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+  //   href: "#",
+  // },
   {
     title: "LinkedIn",
     icon: <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
@@ -58,14 +58,8 @@ export default function Home() {
       />
 
       {/* THE MAIN PAGE */}
-      <div className="hero flex-grow flex items-center min-h-screen relative">
+      <div>
         <Introvideo />
-        <div className="w-full text-center z-10">
-          <div className="">
-        <TextGenerateEffect words="I'm Andrew Dang" className=""/>
-        </div>
-        </div>
-
       </div>
 
       {/* THE ABOUT SECTION */}

@@ -6,7 +6,7 @@ import osu from '../../../../public/assets/osu.webp'
 export const Bentogrid = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center rounded-lg p-6">
-        <div className="grid h-full w-full grid-cols-3 grid-rows-6 gap-4">
+        <div className="grid h-full max-w-7xl grid-cols-3 grid-rows-6 gap-4">
             <div className="col-span-2 row-span-3 rounded-3xl bg-neutral-300">
                 <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
                     <div className='text-center text-neutral-800 text-7xl font-bold mb-4'>
