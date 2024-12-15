@@ -5,10 +5,10 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconHome,
-  IconPhoto,
-  IconTerminal2,
+  // IconPhoto,
+  // IconTerminal2,
 } from "@tabler/icons-react";
-import { TextGenerateEffect } from "./components/ui/text-generate-effect";
+// import { TextGenerateEffect } from "./components/ui/text-generate-effect";
 import { Bentogrid } from "./components/ui/bentogrid";
 import  { Introvideo } from "./components/ui/introvideo";
 
