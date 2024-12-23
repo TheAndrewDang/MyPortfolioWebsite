@@ -1,4 +1,6 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { FloatingDock } from "./components/ui/floating-dock";
 import {
   IconBrandGithub,
@@ -51,15 +53,46 @@ const links = [
 
 
 export default function Home() { 
+  const controls = useAnimation();
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        controls.start({ y: 120 }); // Move dock off-screen
+      } else {
+        controls.start({ y: 0 }); // Bring dock back into view
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [controls, lastScrollY]);
+
   return (
     <div>
     <div className="flex flex-col justify-between">
       {/* THE DOCK */}
-      <FloatingDock
-        mobileClassName="fixed bottom-0 left-0 pb-6 pl-6 z-50"
-        desktopClassName="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 shadow-md"
-        items={links}
-      />
+      <motion.div
+          initial={{ y: 0 }}
+          animate={controls}
+          transition={{ duration: 0, ease: "easeInOut" }}
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 shadow-md"
+        >
+          <FloatingDock
+            mobileClassName="fixed bottom-0 left-0 pb-6 pl-6 z-50"
+            desktopClassName="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 shadow-md"
+            items={links}
+          />
+        </motion.div>
+
       </div>
 
       {/* THE MAIN PAGE */}
