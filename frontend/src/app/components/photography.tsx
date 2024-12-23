@@ -20,14 +20,16 @@ const images = [
 
 export const Photography = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center p-6 mt-4">
+    <div className="w-full h-full flex flex-col items-center mt-4">
       {/* Title Section */}
       <div className="w-full max-w-7xl text-center">
         <h1 className="font-bold text-neutral-800 text-4xl md:text-6xl">Gallery</h1>
       </div>
       
       {/* Image Section */}
+      <div className='h-full w-full'>
       <ParallaxScroll images={images} />
+      </div>
     </div>
   )
 }
