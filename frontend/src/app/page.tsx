@@ -9,8 +9,11 @@ import {
   // IconTerminal2,
 } from "@tabler/icons-react";
 // import { TextGenerateEffect } from "./components/ui/text-generate-effect";
-import { Bentogrid } from "./components/ui/bentogrid";
+// import { Bentogrid } from "./components/ui/bentogrid";
 import  { Introvideo } from "./components/ui/introvideo";
+import { About } from "./components/about";
+import Image from 'next/image';
+import me from '../../public/assets/me.jpg';
 
 // Dock links
 const links = [
@@ -49,13 +52,15 @@ const links = [
 
 export default function Home() { 
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div>
+    <div className="flex flex-col justify-between">
       {/* THE DOCK */}
       <FloatingDock
         mobileClassName="fixed bottom-0 left-0 pb-6 pl-6 z-50"
         desktopClassName="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 shadow-md"
         items={links}
       />
+      </div>
 
       {/* THE MAIN PAGE */}
       <div>
@@ -63,9 +68,11 @@ export default function Home() {
       </div>
 
       {/* THE ABOUT SECTION */}
-      <div className="min-h-screen flex relative">
-        <Bentogrid />
-      </div>
+      <About />
+
+
+
+
 
       {/* THE PROJECTS */}
       {/* <div className="pb-14">

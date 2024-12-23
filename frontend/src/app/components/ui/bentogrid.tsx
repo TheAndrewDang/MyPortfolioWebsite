@@ -5,65 +5,63 @@ import osu from '../../../../public/assets/osu.webp'
 
 export const Bentogrid = () => {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center rounded-lg p-6">
-        <div className="grid h-full max-w-7xl grid-cols-3 grid-rows-6 gap-4">
-            <div className="col-span-2 row-span-3 rounded-3xl bg-neutral-300">
-                <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
-                    <div className='text-center text-neutral-800 text-7xl font-bold mb-4'>
-                        Born and Raised in
-                    </div>
-                    <div className='text-center text-neutral-600 text-6xl font-bold'>
-                        Salem, Oregon
-                    </div>
-                </div>
-            </div>
+    <div className="flex w-full flex-col items-center rounded-lg pb-6">
+      <div className="grid max-w-7xl gap-6 lg:grid-cols-3 lg:grid-rows-6 sm:grid-cols-1 sm:grid-rows-5">
 
-            <div className="row-span-4 relative overflow-hidden">
-                <Image src={me} alt="me" layout='fill' className='h-full w-full object-cover rounded-3xl' />
-            </div>
-
-            <div className="row-span-3 rounded-3xl bg-neutral-300 relative">
-                <div className="absolute inset-0 p-4">
-                    <Image 
-                        src={osu} 
-                        alt="school" 
-                        className="w-full h-full object-cover rounded-3xl opacity-10"
-                    />
-                </div>
-                <div className='relative z-10 w-full h-full col-span-2 row-span-3 flex flex-col justify-center items-center'>
-                    <div className='text-center text-black text-6xl font-bold mb-4'>
-                        B.S Computer Science
-                    </div>
-                    <div className='text-center text-orange-600 text-4xl font-bold px-4'>
-                        Oregon State University
-                    </div>
-                </div>
-            </div>
-
-            <div className="row-span-3 rounded-3xl bg-neutral-300">
-                <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
-                    <div className='text-center text-neutral-800 text-9xl font-bold mb-4'>
-                        Age
-                    </div>
-                    <div className='text-center text-9xl font-bold bg-gradient-to-r from-orange-600 via-pink-400 to-indigo-400 inline-block text-transparent bg-clip-text'>
-                        24
-                    </div>
-                </div>
-            </div>
-
-            <div className="row-span-2 rounded-3xl bg-neutral-300">
-                <div className='w-full h-full col-span-2 row-span-3 rounded-3xl bg-neutral-300 flex flex-col justify-center items-center'>
-                    <div className='text-center text-6xl md:text-5xl font-bold text-red-600 leading-[1.2]'>
-                        Ka Technology
-                    </div>
-                    <div className='text-center text-3xl md:text-2xl text-neutral-800 font-bold'>
-                        Co-Founder and Web Developer
-                    </div>
-                </div>
-            </div>
+        {/* Location Card */}
+        <div className="xl:col-span-2 lg:row-span-3 sm:col-span-1 sm:row-span-1 rounded-3xl bg-neutral-300 shadow-lg">
+          <div className="w-full h-full flex flex-col justify-center items-center p-6">
+            <h2 className="text-center text-neutral-800 xl:text-7xl lg:text-5xl md:text-5xl sm:text-4xl font-bold mb-4">
+              Born and Raised in
+            </h2>
+            <p className="text-center text-neutral-600 xl:text-6xl lg:text-4xl md:text-4xl sm:text-3xl font-bold">
+              Salem, Oregon
+            </p>
+          </div>
         </div>
+
+        {/* Image Card */}
+        <div className="lg:row-span-6 relative overflow-hidden rounded-3xl shadow-lg">
+          <Image
+            src={me}
+            alt="Me"
+            layout="fill"
+            className="h-full w-full object-cover rounded-3xl"
+          />
+        </div>
+
+        {/* Education Card */}
+        <div className="lg:row-span-3 rounded-3xl bg-neutral-300 relative shadow-lg">
+          <div className="absolute inset-0">
+            <Image
+              src={osu}
+              alt="Oregon State University"
+              layout="fill"
+              className="object-cover rounded-3xl opacity-20"
+            />
+          </div>
+          <div className="relative z-10 w-full h-full flex flex-col justify-center items-center p-6">
+            <h2 className="text-center text-black xl:text-6xl lg:text-4xl md:text-4xl sm:text-3xl font-bold mb-4">
+              B.S Computer Science
+            </h2>
+            <p className="text-center text-orange-600 xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl font-bold px-6">
+              Oregon State University
+            </p>
+          </div>
+        </div>
+
+        {/* Age Card */}
+        <div className="lg:row-span-3 rounded-3xl bg-neutral-300 shadow-lg">
+          <div className="w-full h-full flex flex-col justify-center items-center p-6">
+            <h2 className="text-center text-neutral-800 xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold mb-4">
+              Age
+            </h2>
+            <p className="text-center xl:text-9xl lg:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold bg-gradient-to-r from-orange-600 via-pink-400 to-indigo-400 inline-block text-transparent bg-clip-text">
+              24
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
-
-export default Bentogrid
