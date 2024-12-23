@@ -14,8 +14,8 @@ import {
 // import { Bentogrid } from "./components/ui/bentogrid";
 import  { Introvideo } from "./components/ui/introvideo";
 import { About } from "./components/about";
-import Image from 'next/image';
-import me from '../../public/assets/me.jpg';
+// import Image from 'next/image';
+// import me from '../../public/assets/me.jpg';
 
 // Dock links
 const links = [
@@ -109,7 +109,8 @@ export default function Home() {
 
 
       {/* THE PROJECTS */}
-      <div className="">
+      <div>
+
       </div>
 
       <footer>
