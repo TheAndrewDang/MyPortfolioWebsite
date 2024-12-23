@@ -37,7 +37,7 @@ export const Bentogrid = () => {
               src={osu}
               alt="Oregon State University"
               layout="fill"
-              className="object-cover rounded-3xl opacity-20"
+              className="object-cover rounded-3xl opacity-20 blur-sm"
             />
           </div>
           <div className="relative z-10 w-full h-full flex flex-col justify-center items-center p-6">
@@ -56,11 +56,19 @@ export const Bentogrid = () => {
             <h2 className="text-center text-neutral-800 xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl font-bold mb-4">
               Age
             </h2>
-            <p className="text-center xl:text-9xl lg:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold bg-gradient-to-r from-orange-600 via-pink-400 to-indigo-400 inline-block text-transparent bg-clip-text">
-              24
-            </p>
+            <div className="relative flex flex-col items-center">
+              {/* Blurred number */}
+              <p className="absolute top-0 z-10 text-center xl:text-9xl lg:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold bg-gradient-to-r from-orange-600 via-pink-400 to-indigo-400 inline-block text-transparent bg-clip-text blur-xl">
+                24
+              </p>
+              {/* Non-blurred number */}
+              <p className="relative text-center z-20 xl:text-9xl lg:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold bg-gradient-to-r from-orange-600 via-pink-400 to-indigo-400 inline-block text-transparent bg-clip-text">
+                24
+              </p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   )

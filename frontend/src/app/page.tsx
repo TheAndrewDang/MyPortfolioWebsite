@@ -101,20 +101,16 @@ export default function Home() {
       </div>
 
       {/* THE ABOUT SECTION */}
+      <div>
       <About />
-
+      </div>
 
 
 
 
       {/* THE PROJECTS */}
-      {/* <div className="pb-14">
-        <div className="text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-6xl">
-          <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20 pt-14 pb-14">
-            My Projects
-          </div>
-        </div>
-      </div> */}
+      <div className="">
+      </div>
 
       <footer>
         <div className="font-bold px-4 pointer-events-none text-sm text-center md:text-l lg:text-l">
