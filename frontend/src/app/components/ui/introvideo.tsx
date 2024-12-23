@@ -30,7 +30,7 @@ export const Introvideo = () => {
       <div className="absolute inset-0 flex items-center justify-center text-center z-10">
         <TextGenerateEffect
           words="Hi, I'm Andrew Dang"
-          className="text-white text-4xl md:text-6xl lg:text-9xl"
+          className="text-white text-lg md:text-6xl lg:text-9xl"
           duration={1.5}
         />
       </div>

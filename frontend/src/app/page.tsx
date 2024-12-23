@@ -14,6 +14,7 @@ import {
 // import { Bentogrid } from "./components/ui/bentogrid";
 import  { Introvideo } from "./components/ui/introvideo";
 import { About } from "./components/about";
+import { Photography } from './components/photography';
 // import Image from 'next/image';
 // import me from '../../public/assets/me.jpg';
 
@@ -105,11 +106,13 @@ export default function Home() {
       <About />
       </div>
 
-
-
+      {/* THE PHOTOGRAPHY */}
+      <div className='h-full'>
+        <Photography />
+      </div>
 
       {/* THE PROJECTS */}
-      <div>
+      <div className=''>
 
       </div>
 
