@@ -9,7 +9,7 @@ export const Photography = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch("http://localhost:6969/api/s3-images"); // Ensure this matches your backend endpoint
+        const response = await fetch("/api/s3-images");
         const data = await response.json();
         console.log("Fetched URLs:", data); // Log the fetched URLs
         setImages(data);
