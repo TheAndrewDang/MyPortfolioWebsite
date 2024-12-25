@@ -28,11 +28,11 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-full items-start overflow-y-hidden w-full", className)}
+      className={cn("h-full items-start overflow-y-auto w-full", className)}
       ref={gridRef}
     >
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-10 py-40"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-10 py-52 h-full overflow-y-auto"
         ref={gridRef}
       >
         <div className="grid gap-10">
@@ -43,10 +43,11 @@ export const ParallaxScroll = ({
             >
               <Image
                 src={el}
-                className="h-full w-full object-cover object-left-top rounded-3xl gap-10 !m-0 !p-0 shadow-md"
-                height="400"
+                className="h-[700px] w-full object-cover object-left-top rounded-3xl gap-10 !m-0 !p-0 shadow-md"
+                height="500"
                 width="400"
                 alt="thumbnail"
+                unoptimized
               />
             </motion.div>
           ))}
@@ -56,10 +57,11 @@ export const ParallaxScroll = ({
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
               <Image
                 src={el}
-                className="h-full w-full object-cover object-left-top rounded-3xl gap-10 !m-0 !p-0 shadow-md"
-                height="400"
+                className="h-[700px] w-full object-cover object-left-top rounded-3xl gap-10 !m-0 !p-0 shadow-md"
+                height="500"
                 width="400"
                 alt="thumbnail"
+                unoptimized
               />
             </motion.div>
           ))}
@@ -69,10 +71,11 @@ export const ParallaxScroll = ({
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
               <Image
                 src={el}
-                className="h-full w-full object-cover object-left-top rounded-3xl gap-10 !m-0 !p-0 shadow-md"
-                height="400"
+                className="h-[700px] w-full object-cover object-left-top rounded-3xl gap-10 !m-0 !p-0 shadow-md"
+                height="500"
                 width="400"
                 alt="thumbnail"
+                unoptimized
               />
             </motion.div>
           ))}
