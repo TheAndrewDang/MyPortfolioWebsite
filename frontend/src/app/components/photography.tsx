@@ -11,12 +11,13 @@ export const Photography = () => {
       try {
         const response = await fetch("/api/s3-images");
         const data = await response.json();
-        console.log("Fetched URLs:", data); // Log the fetched URLs
+        console.log("Fetched URLs:", data);
         setImages(data);
       } catch (error) {
         console.error("Error fetching images:", error);
       }
     };
+    
 
     fetchImages();
   }, []);

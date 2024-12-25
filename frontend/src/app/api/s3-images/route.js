@@ -1,5 +1,6 @@
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { NextResponse } from "next/server";
 
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
@@ -38,16 +39,12 @@ const getPreSignedUrls = async () => {
   return urls;
 };
 
-export default async function handler(req, res) {
-  if (req.method === "GET") {
-    try {
-      const urls = await getPreSignedUrls();
-      res.status(200).json(urls);
-    } catch (error) {
-      console.error("Error generating pre-signed URLs:", error);
-      res.status(500).json({ error: "Failed to generate pre-signed URLs" });
-    }
-  } else {
-    res.status(405).json({ error: "Method not allowed" });
+export async function GET() {
+  try {
+    const urls = await getPreSignedUrls();
+    return NextResponse.json(urls, { status: 200 });
+  } catch (error) {
+    console.error("Error generating pre-signed URLs:", error);
+    return NextResponse.json({ error: "Failed to generate pre-signed URLs" }, { status: 500 });
   }
 }
