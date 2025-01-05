@@ -17,7 +17,7 @@ import { About } from "./components/about";
 import { Photography } from './components/photography';
 // import Image from 'next/image';
 // import me from '../../public/assets/me.jpg';
-
+import Head from "next/head";
 // Dock links
 const links = [
   {

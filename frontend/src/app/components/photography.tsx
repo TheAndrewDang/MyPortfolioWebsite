@@ -9,24 +9,15 @@ export const Photography = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        // Check localStorage for cached URLs
-        const cachedImages = localStorage.getItem("cachedImageUrls");
-        if (cachedImages) {
-          setImages(JSON.parse(cachedImages));
-          return;
-        }
-  
         const response = await fetch("/api/s3-images");
         const data = await response.json();
         console.log("Fetched URLs:", data);
-  
-        localStorage.setItem("cachedImageUrls", JSON.stringify(data));
         setImages(data);
       } catch (error) {
         console.error("Error fetching images:", error);
       }
     };
-  
+
     fetchImages();
   }, []);
 
