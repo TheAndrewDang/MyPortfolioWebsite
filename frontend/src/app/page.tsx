@@ -15,9 +15,10 @@ import {
 import  { Introvideo } from "./components/ui/introvideo";
 import { About } from "./components/about";
 import { Photography } from './components/photography';
+import Project from './components/project';
 // import Image from 'next/image';
 // import me from '../../public/assets/me.jpg';
-import Head from "next/head";
+// import Head from "next/head";
 // Dock links
 const links = [
   {
@@ -113,7 +114,7 @@ export default function Home() {
 
       {/* THE PROJECTS */}
       <div className=''>
-
+        <Project />
       </div>
 
       <footer>
